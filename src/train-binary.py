@@ -10,7 +10,7 @@ import sys
 from keras import optimizers
 from keras.layers import Dropout, Flatten, Dense, Activation, BatchNormalization
 from keras.layers.convolutional import Convolution2D, MaxPooling2D, Conv2D
-from tensorflow.keras.models import Sequential
+from keras.models import Sequential
 from keras.preprocessing.image import ImageDataGenerator
 from keras.callbacks import ModelCheckpoint
 
@@ -50,8 +50,8 @@ batch_size = 128
 lr = 0.001
 chanDim =3
 
-#model = Sequential()
-model = tensorflow.keras.Sequential()
+model = Sequential()
+#model = tensorflow.keras.Sequential()
 
 model.add(Convolution2D(nb_filters1, conv1_size, strides = conv1_size, padding ='same', input_shape=(img_height, img_width , 3)))
 model.add(Activation('relu'))
