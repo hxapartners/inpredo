@@ -50,7 +50,8 @@ batch_size = 128
 lr = 0.001
 chanDim =3
 
-model = Sequential()
+#model = Sequential()
+model = tensorflow.keras.Sequential()
 
 model.add(Convolution2D(nb_filters1, conv1_size, strides = conv1_size, padding ='same', input_shape=(img_height, img_width , 3)))
 model.add(Activation('relu'))
