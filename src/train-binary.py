@@ -28,8 +28,8 @@ else:
 # BEFORE STARTING TRAINING YOU NEED TO MANUALLY TAKE 20 PERCENENT OF THE TRAINING DATA AND PUT IT INTO VALIDATION FOLDER
 # I was too lazy to do it in the code.
 
-train_data_dir = './data/train/'
-validation_data_dir = './data/validation/'
+train_data_dir = '../data/train/'
+validation_data_dir = '../data/validation/'
 
 # Input the size of your sample images
 img_width, img_height = 150, 150
