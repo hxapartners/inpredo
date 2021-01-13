@@ -55,11 +55,13 @@ model.add(Convolution2D(nb_filters1, conv1_size, conv1_size, padding ='same', in
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(pool_size, pool_size)))
 
-model.add(Convolution2D(nb_filters2, conv2_size, conv2_size, border_mode ="same"))
+#model.add(Convolution2D(nb_filters2, conv2_size, conv2_size, border_mode ="same"))
+model.add(Convolution2D(nb_filters2, conv2_size, conv2_size, padding ="same"))
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(pool_size, pool_size), dim_ordering='th'))
 
-model.add(Convolution2D(nb_filters3, conv3_size, conv3_size, border_mode ='same'))
+#model.add(Convolution2D(nb_filters3, conv3_size, conv3_size, border_mode ='same'))
+model.add(Convolution2D(nb_filters3, conv3_size, conv3_size, padding ='same'))
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(pool_size, pool_size), dim_ordering='th'))
 
