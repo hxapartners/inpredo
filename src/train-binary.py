@@ -4,12 +4,12 @@ import sys
 # If you like to speed up training process with GPU, first install PlaidML and then uncomment the following line.
 # Otherwise it will fallback to tensorflow.
 
-# os.environ["KERAS_BACKEND"] = "plaidml.keras.backend"
+os.environ["KERAS_BACKEND"] = "plaidml.keras.backend"
 
 from keras import optimizers
 from keras.layers import Dropout, Flatten, Dense, Activation, BatchNormalization
 from keras.layers.convolutional import Convolution2D, MaxPooling2D, Conv2D
-from keras.models import Sequential
+from tensorflow.keras.models import Sequential
 from keras.preprocessing.image import ImageDataGenerator
 from keras.callbacks import ModelCheckpoint
 
