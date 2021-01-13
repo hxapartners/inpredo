@@ -52,7 +52,7 @@ chanDim =3
 
 model = Sequential()
 
-model.add(Convolution2D(nb_filters1, conv1_size, conv1_size, padding ='same', input_shape=(img_height, img_width , 3)))
+model.add(Convolution2D(nb_filters1, conv1_size, strides = conv1_size, padding ='same', input_shape=(img_height, img_width , 3)))
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(pool_size, pool_size)))
 
