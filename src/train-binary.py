@@ -4,15 +4,7 @@ import sys
 # If you like to speed up training process with GPU, first install PlaidML and then uncomment the following line.
 # Otherwise it will fallback to tensorflow.
 # install PlaidML support for Keras
-! pip install plaidml plaidml-keras plaidbench
 os.environ["KERAS_BACKEND"] = "plaidml.keras.backend"
-# setup PlaidML using device #2 (GPU)
-! printf 'n\n2\ny' | plaidml-setup
-# dump the PlaidML config
-! printf "plaidml config:"
-! cat ~/.plaidml
-# run PlaidBench on a simple network to ensure everything works
-! plaidbench keras mobilenet
 
 
 from keras import optimizers
