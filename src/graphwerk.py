@@ -48,10 +48,12 @@ def graphwerk(start, finish):
     dx = fig.add_subplot(111)
     #mpl_finance.volume_overlay(ax, open, close, volume, width=0.4, colorup='b', colordown='b', alpha=1)
     mpl_finance.candlestick2_ochl(dx,open, close, high, low, width=1.5, colorup='g', colordown='r', alpha=0.5)
-
+    
     plt.autoscale()
     plt.plot(smb, color="blue", linewidth=10, alpha=0.5)
     plt.axis('off')
+    plt.title = str(date[-1])
+    
     comp_ratio = close_next / close[-1]
     print(comp_ratio)
     str('date: '+date[-1])
