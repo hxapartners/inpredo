@@ -104,11 +104,11 @@ validation_generator = test_datagen.flow_from_directory(
 """
 Tensorboard log
 """
-target_dir = "./models/weights-improvement-{epoch:02d}-{val_acc:.2f}.hdf5"
+target_dir = "../models/weights-improvement-{epoch:02d}-{val_acc:.2f}.hdf5"
 if not os.path.exists(target_dir):
   os.mkdir(target_dir)
-model.save('./src/models/model.h5')
-model.save_weights('./src/models/weights.h5')
+model.save('../src/models/model.h5')
+model.save_weights('../src/models/weights.h5')
 
 checkpoint = ModelCheckpoint(target_dir, monitor='val_acc', verbose=1, save_best_only=True, mode='max')
 callbacks_list = [checkpoint]
