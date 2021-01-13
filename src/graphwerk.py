@@ -54,7 +54,7 @@ def graphwerk(start, finish):
     plt.axis('off')
     comp_ratio = close_next / close[-1]
     print(comp_ratio)
-
+    str('date: '+date[-1])
     if close[-1] > close_next:
             print('close value is bigger')
             print('last value: ' + str(close[-1]))
