@@ -126,6 +126,9 @@ callbacks_list = [checkpoint]
 
 
 
-model.fit_generator(train_generator, steps_per_epoch=nb_train_samples//batch_size,epochs=epochs, shuffle=True,validation_data=validation_generator,callbacks=callbacks_list,validation_steps=nb_validation_samples//batch_size)
+model.fit_generator(
+  train_generator, steps_per_epoch=nb_train_samples//batch_size,epochs=epochs, 
+  shuffle=True,validation_data=validation_generator,callbacks=callbacks_list,
+  validation_steps=nb_validation_samples//batch_size)
 
 
