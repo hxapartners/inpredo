@@ -106,7 +106,7 @@ validation_generator = test_datagen.flow_from_directory(
 """
 Tensorboard log
 """
-print history.history.keys()
+print(history.history.keys())
 
 target_dir = "../models/weights-improvement-{epoch:02d}-{val_accuracy:.2f}.hdf5"
 if not os.path.exists(target_dir):
