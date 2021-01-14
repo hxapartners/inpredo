@@ -9,8 +9,8 @@ import uuid
 ad = genfromtxt('../financial_data/eurusd.csv', delimiter=',' ,dtype=str)
 pd = np.flipud(ad)
 
-buy_dir = '../data/train/buy/'
-sell_dir = '../data/train/sell/'
+buy_dir = '../data/main/buy/'
+sell_dir = '../data/main/sell/'
 
 def convolve_sma(array, period):
     return np.convolve(array, np.ones((period,))/period, mode='valid')
