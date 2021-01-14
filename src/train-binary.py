@@ -120,7 +120,7 @@ if not os.path.exists(target_dir):
 model.save('../models/model.h5')
 model.save_weights('../models/weights.h5')
 #tf.keras.callbacks.ModelCheckpoint
-checkpoint = ModelCheckpoint(target_dir, monitor=val_accuracy, verbose=1, save_best_only=True, mode='max')
+checkpoint = ModelCheckpoint(target_dir, monitor="val_accuracy", verbose=1, save_best_only=True, mode='max')
 
 callbacks_list = [checkpoint]
 
