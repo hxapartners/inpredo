@@ -6,6 +6,9 @@ import sys
 # install PlaidML support for Keras
 os.environ["KERAS_BACKEND"] = "plaidml.keras.backend"
 
+import tensorflow as tf
+from tensorflow import keras
+from tensorflow.keras import layers
 
 from keras import optimizers
 from keras.layers import Dropout, Flatten, Dense, Activation, BatchNormalization
@@ -106,27 +109,22 @@ validation_generator = test_datagen.flow_from_directory(
 """
 Tensorboard log
 """
-#print(model.history.history.keys())
+
+h = model.fit()
+print(h.history.history.keys())
 
 target_dir = "../models/weights-improvement-{epoch:02d}-{val_accuracy:.2f}.hdf5"
 if not os.path.exists(target_dir):
   os.mkdir(target_dir)
 model.save('../models/model.h5')
 model.save_weights('../models/weights.h5')
-
-checkpoint = ModelCheckpoint(target_dir, monitor='val_accuracy', verbose=1, save_best_only=True, mode='max')
+#tf.keras.callbacks.ModelCheckpoint
+checkpoint = tf.keras.callbacks.ModelCheckpoint(target_dir, monitor='val_accuracy', verbose=1, save_best_only=True, mode='max')
 
 callbacks_list = [checkpoint]
 
 
 
-model.fit_generator(
-    train_generator,
-    steps_per_epoch=nb_train_samples//batch_size,
-    epochs=epochs,
-    shuffle=True,
-    validation_data=validation_generator,
-    callbacks=callbacks_list,
-    validation_steps=nb_validation_samples//batch_size)
+model.fit_generator(train_generator, steps_per_epoch=nb_train_samples//batch_size,epochs=epochs, shuffle=True,validation_data=validation_generator,callbacks=callbacks_list,validation_steps=nb_validation_samples//batch_size)
 
 
