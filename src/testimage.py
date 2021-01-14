@@ -4,16 +4,17 @@ bad_list=[]
 #dir=r'c:\'PetImages'
 dir = '../data'
 #dir = '../data/train'
+print("starting now: "+dir)
 
 subdir_list=os.listdir(dir) # create a list of the sub directories in the directory ie train or test
 for d in subdir_list:  # iterate through the sub directories train and test
     dpath=os.path.join (dir, d) # create path to sub directory
     if d in ['train', 'validation']:
         class_list=os.listdir(dpath) # list of classes ie dog or cat
-       # print (class_list)
+        print (class_list)
         for klass in class_list: # iterate through the two classes
             class_path=os.path.join(dpath, klass) # path to class directory
-            #print(class_path)
+            print(class_path)
             file_list=os.listdir(class_path) # create list of files in class directory
             for f in file_list: # iterate through the files
                 fpath=os.path.join (class_path,f)
