@@ -106,15 +106,19 @@ validation_generator = test_datagen.flow_from_directory(
 """
 Tensorboard log
 """
-target_dir = "../models/weights-improvement-{epoch:02d}-{accuracy:.2f}.hdf5"
+print history.history.keys()
+
+target_dir = "../models/weights-improvement-{epoch:02d}-{val_accuracy:.2f}.hdf5"
 if not os.path.exists(target_dir):
   os.mkdir(target_dir)
 model.save('../models/model.h5')
 model.save_weights('../models/weights.h5')
 
-checkpoint = ModelCheckpoint(target_dir, monitor='accuracy', verbose=1, save_best_only=True, mode='max')
+checkpoint = ModelCheckpoint(target_dir, monitor='val_accuracy', verbose=1, save_best_only=True, mode='max')
 
 callbacks_list = [checkpoint]
+
+
 
 model.fit_generator(
     train_generator,
