@@ -31,4 +31,6 @@ for d in subdir_list:  # iterate through the sub directories train and test
                         print(f'file {fpath} is not a valid image file ')
                         bad_list.append(fpath)
                        
+
+print("checked all")                  
 print (bad_list)
