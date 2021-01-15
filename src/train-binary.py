@@ -4,7 +4,7 @@ import sys
 # If you like to speed up training process with GPU, first install PlaidML and then uncomment the following line.
 # Otherwise it will fallback to tensorflow.
 # install PlaidML support for Keras
-os.environ["KERAS_BACKEND"] = "plaidml.keras.backend"
+#os.environ["KERAS_BACKEND"] = "plaidml.keras.backend"
 
 import tensorflow as tf
 from tensorflow import keras
