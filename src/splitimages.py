@@ -9,7 +9,7 @@ train_dir = '../data/train'
 test_dir = '../data/test'
 val_dir = '../data/validation'
 
-classes_dir = ['/buy', 'sell']
+classes_dir = ['/sell']
 
 val_ratio = 0.20
 test_ratio = 0.05
